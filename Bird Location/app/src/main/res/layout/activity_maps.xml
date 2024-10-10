@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Maps">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="678dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mapbox_cameraBearing="1.5"
+            app:mapbox_cameraPitch="0.0"
+            app:mapbox_cameraTargetLat="39.5"
+            app:mapbox_cameraTargetLng="-98.0"
+            app:mapbox_cameraZoom="2.0"
+            app:mapbox_locationComponentEnabled="true"
+            app:mapbox_locationComponentPuckBearing="heading"
+            app:mapbox_locationComponentPulsingEnabled="true">
+
+            <TextView
+                android:id="@+id/annotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/hello_world"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextBirdName"
+                android:layout_width="266dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:background="#FFFBFB"
+                android:hint="Enter Bird Name"
+                android:textColor="#020202"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/radius"
+                android:layout_width="127dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:hint="Radius"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.mapbox.maps.MapView>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="306dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#049AA9"
+        android:text="Search"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
